@@ -12,7 +12,16 @@ function HomepageImg(){
     );
 }
 
+function ZipCode(){
+    return (
+    <form>
+        <input type="text" name="zip-code" placeholder="Search a Zip Code" />
+    </form>
+    );
+}
+
 ReactDOM.render(<Heading />, document.querySelector('#heading'));
 ReactDOM.render(<HomepageImg />, document.querySelector('#sun-image'));
+ReactDOM.render(<ZipCode />, document.querySelector('#zip-code'));
 
 
