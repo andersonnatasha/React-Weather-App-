@@ -3,9 +3,10 @@
 function Heading(){
     return(
         <ul>
-            <h1>Weather Checker</h1>
+            <h1>React Weather App</h1>
         </ul>
     );
 }
 
 ReactDOM.render(<Heading />, document.querySelector('#app'));
+
