@@ -19,33 +19,29 @@
 
 const WeatherApp = (props) => {
     const [zipcode, updateZip] = React.useState("")
-    const [weather, getWeather] = React.useState(null)
+    const [weather, getWeather] = React.useState([])
 
 
-    function handleZipCodeSubmission (zipcode){
-
-        console.log(zipcode)
-        let data = {'zipcode':zipcode}
-        console.log('data', data)
+    const handleZipCodeSubmission = (evt) => {
+        evt.preventDefault();
+        let data = {zipcode}
         fetch('/get-weather-details',{method: "POST",  body: JSON.stringify(data),  headers: {
             'Content-Type': 'application/json'}} )
             .then((res) => res.json())
-            .then((data) => console.log('data from get-weather-details',data)
-    )}
+            .then((data) => weather.push(data));
+        console.log(weather)}
 
 
      return (
         <div>
             <h1>React Weather App</h1>
              <img id="homepage-img" src="/static/img/sun_and_clouds.png"/>
-            <form onSubmit={handleZipCodeSubmission(zipcode)}>
+            <form>
                <input type="text" name="zip-code" value={zipcode} placeholder="Search a Zip Code" onChange={e => updateZip(e.target.value)}/>
-                <button type="submit" value="Submit">SUBMIT</button>
+                <button onClick={handleZipCodeSubmission} value="Submit">SUBMIT</button>
             </form>
             <p> Your zip is {zipcode} </p>
-            {/* {<WeatherDetails
-                cityName = {props.temp_max}
-            > } */}
+            <p>{weather}</p>
          </div>
               )
  }

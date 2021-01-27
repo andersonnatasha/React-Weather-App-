@@ -4,7 +4,9 @@ from os import environ
 
 app = Flask(__name__)
 
+# Todo remove Weather Key not used
 OPEN_WEATHER_KEY = environ['OPEN_WEATHER_KEY']
+# WEATHERBIT_KEY = environ['WEATHERBIT_KEY']
 
 
 @app.route('/')
@@ -21,13 +23,18 @@ def get_current_weather_details_json():
     # zip_code = request.args.get('zip-code')
     data = request.get_json()
     zip_code = data['zipcode']
+
+    #Below is WeatherBit
+    # url = 'https://api.weatherbit.io/v2.0/current'
+    # payload = {'key': WEATHERBIT_KEY, 'units': 'I', 'postal_code': zip_code}
+
+    # Below is for Openweather API
     url = "http://api.openweathermap.org/data/2.5/weather"
     payload = {'zip': zip_code, 'units': 'imperial', "APPID": OPEN_WEATHER_KEY}
 
     res = requests.get(url, params=payload)
     data = res.json()
     print('???????????????????????>>>>>>>>>>>>>>>>>>>>>>>>>???????????????/')
-    print(zip_code)
     print(data)
     return data
 
