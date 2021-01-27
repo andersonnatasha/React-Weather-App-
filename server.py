@@ -1,13 +1,41 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+import requests
+from os import environ
 
 app = Flask(__name__)
+
+OPEN_WEATHER_KEY = environ['OPEN_WEATHER_KEY']
 
 
 @app.route('/')
 def show_homepage():
     """Show the application's homepage."""
 
-    return render_template('homepage.html')
+    return render_template('base.html')
+
+
+@app.route('/get-weather-details', methods=['POST'])
+def get_current_weather_details_json():
+    """Return a JSON response of current weather details for zip-code."""
+
+    # zip_code = request.args.get('zip-code')
+    data = request.get_json()
+    zip_code = data['zipcode']
+    url = "http://api.openweathermap.org/data/2.5/weather"
+    payload = {'zip': zip_code, 'units': 'imperial', "APPID": OPEN_WEATHER_KEY}
+
+    res = requests.get(url, params=payload)
+    data = res.json()
+    print('???????????????????????>>>>>>>>>>>>>>>>>>>>>>>>>???????????????/')
+    print(zip_code)
+    print(data)
+    return data
+
+# React makes request to server
+# server makes API request --> gets response.
+# server returns the response as JSON to my component
+# component parses and then it displays and does want i want
+# nothing really for props
 
 
 if __name__ == '__main__':
