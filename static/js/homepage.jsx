@@ -52,62 +52,7 @@ const WeatherApp = (props) => {
 
 
 
-// function Heading(){
-//     return(
-//         <h1>React Weather App &#176;</h1>
-//     );
-// }
-
-// function HomepageImg(){
-//     return (
-//         <img id="homepage-img" src="/static/img/sun_and_clouds.png"/>
-//     );
-// }
-
-// function ZipCode(){
-//     return (
-//     <form>
-//         <input type="text" name="zip-code" placeholder="Search a Zip Code" />
-//     </form>
-//     );
-// }
-
-// function WeatherDetailsContainer(){
-
-//     const [details, getWeatherDetails] = React.useState(" ")
-
-//     const weatherDetails = [];
-
-//     React.useEffect(() => {
-//         fetch('/get-weather-details')
-//         .then((response) => response.json())
-//         .then((data) => getWeatherDetails(data))
-//       }, [])
-
-
-
-      // helper function of get weather then uin useEffect call get weather
-    //   for (const detail of )
-
-//     return (
-//         <div>{{weatherDetails}}</div>
-//     )
-
-// }
-
-// ReactDOM.render(<Heading />, document.querySelector('#heading'));
-// ReactDOM.render(<HomepageImg />, document.querySelector('#sun-image'));
-// ReactDOM.render(<ZipCode />, document.querySelector('#zip-code'));
-// ReactDOM.render(<WeatherDetailsContainer />, document.querySelector('#weather-details'));
-
-ReactDOM.render(< WeatherApp />, document.querySelector('#heading'));
-
-
-
-// server is going to output to front end. Then the
-
-
-// each component is a page so here maybe only need one component
+ReactDOM.render(< WeatherApp />, document.querySelector('#app'));
 
 
 
