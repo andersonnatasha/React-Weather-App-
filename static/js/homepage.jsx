@@ -1,19 +1,19 @@
 "use strict";
 
-// function WeatherDetails(prop) {
-//     return (
-//         <div className="weather">
-//             <p> {prop.city_name} </p>
-//             <p> {prop.weather_description} </p>
-//             <p> Temperature: {prop.temp}&#176; </p>
-//             <p> Feels Like: {prop.feels_like}&#176; </p>
-//             <p> Min: {prop.temp_min}&#176; </p>
-//             <p> Max:{prop.temp_max}&#176; </p>
-//             <p> Humidity: {prop.humidity}% </p>
-//             <p> Wind: {prop.wind_speed} mph </p>
-//         </div>
-//     );
-// };
+function WeatherDetails(prop) {
+    return (
+        <div className="weather">
+            <p> {prop.city_name} </p>
+            <p> {prop.weather_description} </p>
+            <p> Temperature: {prop.temp}&#176; </p>
+            <p> Feels Like: {prop.feels_like}&#176; </p>
+            <p> Min: {prop.temp_min}&#176; </p>
+            <p> Max:{prop.temp_max}&#176; </p>
+            <p> Humidity: {prop.humidity}% </p>
+            <p> Wind: {prop.wind_speed} mph </p>
+        </div>
+    );
+};
 
 
 
@@ -21,6 +21,7 @@ const WeatherApp = (props) => {
     const [zipcode, updateZip] = React.useState("")
     const [weather, getWeather] = React.useState([])
 
+    const details = []
 
     const handleZipCodeSubmission = (evt) => {
         evt.preventDefault();
@@ -28,9 +29,11 @@ const WeatherApp = (props) => {
         fetch('/get-weather-details',{method: "POST",  body: JSON.stringify(data),  headers: {
             'Content-Type': 'application/json'}} )
             .then((res) => res.json())
-            .then((data) => weather.push(data));
-        console.log(weather)}
+            .then((data) => weather.push(data.name));
+    }
 
+        // weather.push(details['weather'][0]['description'])
+        // weather.push(details[0]['main']['temp'])
 
      return (
         <div>
