@@ -1,3 +1,18 @@
 #homepage-img {
-  width: 20%;
+  width: 10%;
+  display: block;
+  position: relative;
+  top: -2em;
+  margin-left: auto;
+  margin-right: auto;
+  left: 4em;
+}
+
+.heading {
+  text-align: center;
+}
+
+#zip-code-form {
+  display: block;
+  text-align: center;
 }

@@ -16,16 +16,11 @@ function WeatherDetails ({zipCode}) {
     }, [zipCode])
 
 
-
-
-    console.log(weatherDetails)
-
-
     return(
         <React.Fragment>
-            <Section title="Temperature" />
+            <Section id="temp" title="Temperature" />
             <div> {weatherDetails.temp} </div>
-            <Section title="Feels Like" />
+            <Section id="feels-like" title="Feels Like" />
             <div> {weatherDetails.feels_like} </div>
         </React.Fragment>
 
