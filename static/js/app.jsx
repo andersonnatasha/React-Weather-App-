@@ -3,7 +3,11 @@
 function App () {
 
     return(
-        <ZipCode />
+        <React.Fragment>
+            <Heading message="React Weather App" />
+            <ZipCode />
+            <WeatherDetails />
+        </React.Fragment>
     )
 }
 

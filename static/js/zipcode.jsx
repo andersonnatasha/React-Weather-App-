@@ -6,7 +6,6 @@ function ZipCode () {
 
     function handleZipCodeSubmission (evt) {
         evt.preventDefault();
-
     }
 
     return(
