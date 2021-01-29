@@ -18,10 +18,17 @@ function WeatherDetails ({zipCode}) {
 
     return(
         <React.Fragment>
-            <Section id="temp" title="Temperature" />
-            <div> {weatherDetails.temp} </div>
-            <Section id="feels-like" title="Feels Like" />
-            <div> {weatherDetails.feels_like} </div>
+            <div id="details">
+                <div id="temp">
+                    <Section title="Temperature" />
+                    {weatherDetails.temp}
+                </div>
+
+                <div id="feels-like">
+                    <Section title="Feels Like" />
+                    {weatherDetails.feels_like}
+                </div>
+            </div>
         </React.Fragment>
 
     )

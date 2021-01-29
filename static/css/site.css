@@ -2,10 +2,10 @@
   width: 10%;
   display: block;
   position: relative;
-  top: -2em;
+  /* top: -1em; */
   margin-left: auto;
   margin-right: auto;
-  left: 4em;
+  /* left: 4em; */
 }
 
 .heading {
@@ -15,4 +15,16 @@
 #zip-code-form {
   display: block;
   text-align: center;
+}
+
+#details {
+  display: flex;
+  justify-content: center;
+}
+
+#temp {
+  margin-right: 5%;
+}
+#feels-like {
+  margin-left: 5%;
 }
