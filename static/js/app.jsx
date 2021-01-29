@@ -14,7 +14,7 @@ function App () {
         <React.Fragment>
             <Heading message="React Weather App"/>
             <ZipCode onChange={(value) => setZipCode(value)} onClick={(evt) => handleZipCodeSubmission(evt)} />
-            {/* <WeatherDetails /> */}
+            <WeatherDetails zipCode={zipCode}/>
         </React.Fragment>
     )
 }
