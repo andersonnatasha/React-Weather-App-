@@ -15,7 +15,8 @@ function App () {
         <React.Fragment>
             <Heading message="React Weather App"/>
             <ZipCode onChange={(value) => value.length === 5 && setZipCode(value)} onSubmit={(evt) => handleZipCodeSubmission(evt)} />
-            <WeatherDetails zipCode={zipCode}/>
+            {zipCode.length === 5 &&  <WeatherDetails zipCode={zipCode}/>}
+
         </React.Fragment>
     )
 }

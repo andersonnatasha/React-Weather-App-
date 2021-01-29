@@ -3,7 +3,6 @@
 function WeatherDetails ({zipCode}) {
     const [weatherDetails, setWeatherDetails] = React.useState("");
 
-
     React.useEffect(() => {
         axios.get("http://api.openweathermap.org/data/2.5/weather",{
             params: {
@@ -15,6 +14,8 @@ function WeatherDetails ({zipCode}) {
             setWeatherDetails(res.data.main)
         })
     }, [zipCode])
+
+
 
 
     console.log(weatherDetails)
