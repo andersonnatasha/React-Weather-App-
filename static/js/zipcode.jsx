@@ -4,6 +4,11 @@ function ZipCode () {
 
     const [zipCode, setZipCode] = React.useState(" ")
 
+    function handleZipCodeSubmission (evt) {
+        evt.preventDefault();
+
+    }
+
     return(
         <React.Fragment>
         <form>
