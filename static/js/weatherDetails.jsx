@@ -1,7 +1,7 @@
 "use strict";
 
 function WeatherDetails () {
-    const [weatherDetails, setWeatherDetails] = React.useState([]);
+    const [weatherDetails, setWeatherDetails] = React.useState("");
 
 
     React.useEffect(() => {
@@ -18,8 +18,6 @@ function WeatherDetails () {
 
 
     console.log(weatherDetails)
-
-
 
 
     return(

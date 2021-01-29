@@ -1,22 +1,18 @@
 "use strict";
 
-function ZipCode () {
+function ZipCode ({onChange, onClick}) {
 
-    const [zipCode, setZipCode] = React.useState(" ")
-
-    function handleZipCodeSubmission (evt) {
-        evt.preventDefault();
-    }
 
     return(
         <React.Fragment>
         <form>
-            <input type="text" onChange={e => setZipCode(e.target.value)} value={zipCode} name="zip-code" placeholder="Enter Zip Code" />
-            <button onClick={handleZipCodeSubmission} value="Submit">Submit</button>
+            <input type="text" name="zip-code" placeholder="Enter Zip Code" onChange={(evt) => {onChange(evt.target.value)}}/>
+            <button onClick={(evt) => {onClick(evt)}} value="Submit">Submit</button>
         </form>
         <div>
-            your zip code is {zipCode}
+            {/* your zip code is {zipCode} */}
         </div>
         </ React.Fragment>
     )
 }
+// onChange={e => setZipCode(e.target.value)} value={zipCode}
