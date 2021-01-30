@@ -13,7 +13,6 @@ function App () {
         .then(data => setApiKey(data))
     },[])
 
-    console.log(apiKey)
     function handleZipCodeSubmission (evt) {
         evt.preventDefault();
         console.log(evt.target)
@@ -21,13 +20,21 @@ function App () {
     }
 
     return(
-        <React.Fragment>
+        <div id="app">
             <Heading message="React Weather App"/>
             <div id="zip-code-form" >
-            <ZipCode onChange={(value) => value.length === 5 && setZipCode(value)} onSubmit={(evt) => handleZipCodeSubmission(evt)} />
-            {zipCode.length === 5 &&  <WeatherDetails zipCode={zipCode} apiKey={apiKey}/>}
+                <ZipCode onChange={(value) => value.length === 5 && setZipCode(value)} onSubmit={(evt) => handleZipCodeSubmission(evt)} />
+                {zipCode.length === 5 &&  <WeatherDetails zipCode={zipCode} apiKey={apiKey}/>}
             </div>
-        </React.Fragment>
+            <div id="heading-details">
+                <div className="specific-heading">
+                <Section title="Temperature" />
+                </div>
+            <div className="specific-heading">
+                <Section title="Feels Like" />
+            </div>
+            </div>
+        </div>
     )
 }
 

@@ -1,3 +1,18 @@
+body {
+  background-color: rgba(139, 182, 229, 0.8);
+  font-family: 'Fredoka One';
+  font-size: 15px;
+}
+#app {
+  background-color: rgba(139, 182, 229, 0.9);
+  border-radius: 1%;
+  margin-top: 10em;
+  width: 65em;
+  height: 25em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #homepage-img {
   width: 10%;
   display: block;
@@ -10,6 +25,7 @@
 
 .heading {
   text-align: center;
+  padding-top: 1em;
 }
 
 #zip-code-form {
@@ -17,14 +33,72 @@
   text-align: center;
 }
 
-#details {
+#heading-details {
   display: flex;
   justify-content: center;
+  position: absolute;
+  top: 25em;
+  position: absolute;
+  top: 23em;
+  left: 15em;
+}
+
+#details {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  top: 8em;
+  padding-left: 2em;
+  padding-right: 20em;
+}
+
+.specific-heading {
+  margin-right: 10%;
+  /* display: flex;
+  justify-content: center; */
+  /* padding-left: 20em;
+  padding-right: 22em; */
+
+  /* margin-left: 10%; */
+  position: relative;
+  left: 15em;
+  background-color: rgba(241, 208, 226, 0.6);
+  border-radius: 10%;
+  height: 10em;
+  width: 20em;
+  text-align: center;
 }
 
 #temp {
-  margin-right: 5%;
+  margin-right: 23%;
+  z-index: 1;
+  position: relative;
+  left: 19em;
 }
+
 #feels-like {
-  margin-left: 5%;
+  margin-left: 23%;
+  z-index: 1;
+}
+
+#location {
+  position: relative;
+  top: 1em;
+  z-index: 1;
+}
+
+#description {
+  position: relative;
+  top: 1em;
+  margin-bottom: 0px;
+  z-index: 1;
+}
+
+#zip-code-form {
+  margin-bottom: 0px;
+}
+
+#zip-input {
+  border-radius: 30%;
+  text-align: center;
 }

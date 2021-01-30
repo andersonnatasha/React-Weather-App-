@@ -1,9 +1,13 @@
+
+
 "use strict";
 
 function WeatherDetails ({zipCode, apiKey}) {
     const [weatherTemperature, setWeatherTemperature] = React.useState('')
     const [location, setLocation] = React.useState('')
     const [description, setDescription] = React.useState('')
+
+
 
     React.useEffect(() => {
         axios.get("http://api.openweathermap.org/data/2.5/weather",{
@@ -33,13 +37,11 @@ function WeatherDetails ({zipCode, apiKey}) {
             <div id="details">
 
                 <div id="temp">
-                    <Section title="Feels Like" />
-                    {weatherTemperature.temp}&#176;
+                    {weatherTemperature.temp} &#176;
                 </div>
 
                 <div id="feels-like">
-                    <Section title="Feels Like" />
-                    {weatherTemperature.feels_like}&#176;
+                    {weatherTemperature.feels_like} &#176;
                 </div>
             </div>
         </React.Fragment>
